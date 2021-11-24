@@ -8,11 +8,7 @@ repositories {
     mavenCentral()
 }
 
-task.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-task.withType(Test) {
+task.withType(test) {
     useJUnitPlatform()
     
     testLogging {
