@@ -1,24 +1,12 @@
 
 plugins {
     id 'java-library'
-    id 'io.qameta.allure' version '2.9.6'
 }
 
 repositories {
     mavenCentral()
 }
 
-task.withType(test) {
-    useJUnitPlatform()
-    
-    testLogging {
-        lifecycle {
-            events 'started', 'failed'
-            enents 'started', 'skipped', 'failed', 'standart_error', 'standart_out'
-            exceptionFormat 'short'
-        }
-    }
-}
 
 dependencies {
     testImplementation (
@@ -26,4 +14,8 @@ dependencies {
             'com.github.javafaker:javafaker:0.12',
             "org.junit.jupiter:junit-jupiter:5.8.1")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.1"
+}
+
+test {
+    useJUnitPlatform()
 }
