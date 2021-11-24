@@ -5,14 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
 
-import static com.codeborne.selenide.Selenide.*;
-
 public class StudentRegistrationFormTest extends TestBase {
 
     Faker faker = new Faker(new Locale("ru"));
     String firstName = faker.name().firstName();
     String lastName = faker.name().lastName();
-    String email = faker.internet().emailAddress();
+    String email = faker.internet().emailAddress("test");
     String phoneNumber = faker.number().digits(10);
     String country = faker.address().country();
     String city = faker.address().cityName();
